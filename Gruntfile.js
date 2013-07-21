@@ -120,6 +120,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['connect:server','jshint', 'qunit', 'clean', 'concat', 'uglify']);
-  grunt.registerTask('demo', ['connect:demo','watch']);
+  grunt.registerTask('demo', ['connect','watch']);
 
 };
