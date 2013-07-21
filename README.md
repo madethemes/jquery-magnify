@@ -15,7 +15,7 @@ In your web page:
 <script src="dist/madeMagnify.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $.madeMagnify(); // "awesome"
 });
 </script>
 ```
