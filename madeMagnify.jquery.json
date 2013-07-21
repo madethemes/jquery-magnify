@@ -1,0 +1,26 @@
+{
+  "name": "madeMagnify",
+  "title": "Made Magnify",
+  "description": "Made Themes Magnify Plugin",
+  "version": "0.1.0",
+  "homepage": "https://github.com/madethemes/jquery-magnify",
+  "author": {
+    "name": "Made Themes",
+    "email": "support@madethemes.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/madethemes/jquery-magnify.git"
+  },
+  "bugs": "https://github.com/madethemes/jquery-magnify/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/madethemes/jquery-magnify/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.9.0"
+  },
+  "keywords": []
+}
