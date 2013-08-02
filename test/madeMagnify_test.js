@@ -33,30 +33,29 @@
     strictEqual(this.elems.madeMagnify(), this.elems, 'should be chainable');
   });
 
-  test('is awesome', function() {
-    expect(1);
-    strictEqual(this.elems.madeMagnify().text(), 'awesome0awesome1awesome2', 'should be awesome');
+  test('Default Options', function() {
+    equal($.madeMagnify.defaultOptions.lensWidth, 200);
+    equal($.madeMagnify.defaultOptions.lensHeight, 200);         
   });
 
-  module('jQuery.madeMagnify');
-
-  test('is awesome', function() {
-    expect(2);
-    strictEqual($.madeMagnify(), 'awesome.', 'should be awesome');
-    strictEqual($.madeMagnify({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
+  test("Override Default Options", function() {
+    $.madeMagnify.overrideOptions({
+        lensWidth : 400,
+        lensHeight : 300  
+    });
+    
+    equal($.madeMagnify.options.lensWidth, 400);
+    equal($.madeMagnify.options.lensHeight, 300);   
   });
 
-  module(':madeMagnify selector', {
-    // This will run before each test in this module.
-    setup: function() {
-      this.elems = $('#qunit-fixture').children();
-    }
+  test("Calling Plugin Override Options", function() {
+    $("#qunit-fixture").madeMagnify({
+      lensWidth : 500
+    });
+
+    equal($.madeMagnify.options.lensWidth, 500);
+    equal($.madeMagnify.options.lensHeight, 200);
   });
 
-  test('is awesome', function() {
-    expect(1);
-    // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':madeMagnify').get(), this.elems.last().get(), 'knows awesome when it sees it');
-  });
 
 }(jQuery));

@@ -8,31 +8,26 @@
 
 (function($) {
 
+  var madeMagnify = $.madeMagnify = {};
+
+  madeMagnify.defaultOptions = {
+    lensWidth : 200,
+    lensHeight : 200    
+  };
+
+  madeMagnify.options = null;
+
+  madeMagnify.overrideOptions = function(options) {
+    madeMagnify.options = $.extend(
+       {},
+       madeMagnify.defaultOptions,           
+       options);
+  };
+
   // Collection method.
-  $.fn.madeMagnify = function() {
-    return this.each(function(i) {
-       // Do something awesome to each selected element.
-       $(this).html('awesome' + i);
-    });
-  };
-
-  // Static method.
-  $.madeMagnify = function(options) {
-    // Override default options with passed-in options.
-    options = $.extend({}, $.madeMagnify.options, options);
-    // Return something awesome.
-    return 'awesome' + options.punctuation;
-  };
-
-  // Static method default options.
-  $.madeMagnify.options = {
-    punctuation: '.'
-  };
-
-  // Custom selector.
-  $.expr[':'].madeMagnify = function(elem) {
-    // Is this element awesome?
-    return $(elem).text().indexOf('awesome') !== -1;
+  $.fn.madeMagnify = function(options){
+    madeMagnify.overrideOptions(options);                    
+    return this;
   };
 
 }(jQuery));
