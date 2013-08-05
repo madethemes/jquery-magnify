@@ -49,13 +49,27 @@
   });
 
   test("Calling Plugin Override Options", function() {
-    $("#qunit-fixture").madeMagnify({
+    $("#qunit-fixture-img-correct").madeMagnify({
       lensWidth : 500
     });
 
     equal($.madeMagnify.options.lensWidth, 500);
     equal($.madeMagnify.options.lensHeight, 200);
   });
+
+  test("Check element validation", function() {
+    equal($.madeMagnify.validateElement($("#qunit-fixture-img-bad-src")), false);
+    equal($.madeMagnify.validateElement($("#qunit-fixture-img-no-src")), false);
+    equal($.madeMagnify.validateElement($("#qunit-fixture-img-correct")), true);
+  });
+
+  test("HTML Builder", function() {
+    $.madeMagnify.buildHtml($("#qunit-fixture-img-correct"));
+
+    ok($(".made-magnify-wrap").length !== 0, ".made-magnify-wrap element exists");
+    ok($(".made-magnify-large").length !== 0, ".made-magnify-large element exists");
+  });
+
 
 
 }(jQuery));
