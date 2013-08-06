@@ -103,8 +103,13 @@
         }
       });
 
+      elemWrap.mouseenter(function(){
+        elemWrap.css('z-index', '1000');
+      });
+
       elemWrap.mouseleave(function(){
         elemLens.fadeOut(100);
+        elemWrap.css('z-index', '');
       });
   };
 
