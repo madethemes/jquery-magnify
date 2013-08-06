@@ -61,16 +61,16 @@
 
   madeMagnify.setLensPosition = function(element) {
 
-    var image_object = new Image();
-      image_object.src = $(element).attr("src");
+    var image_object = new Image(),
+        magnify_offset = $(element).offset(),
+        elemLens = $(element).siblings('.made-magnify-large'),
+        elemWrap = $(element).parent();
+    
+    image_object.src = $(element).attr("src");
       
-      var native_width = image_object.width,
-          native_height = image_object.height;
+    var native_width = image_object.width,
+        native_height = image_object.height;
 
-
-      var magnify_offset = $(element).offset(),
-          elemLens = $(element).siblings('.made-magnify-large'),
-          elemWrap = $(element).parent();
 
     elemWrap.mousemove(function(e){
 
