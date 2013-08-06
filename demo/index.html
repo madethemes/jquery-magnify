@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>jQuery Made Themes Magnify Plugin</title>
+		<link href="../css/styles.css" media="all" rel="stylesheet" type="text/css" />
 		<script src="../libs/jquery-loader.js"></script>
 		<script src="../dist/madeMagnify.min.js"></script>
 
@@ -9,8 +10,15 @@
 	<body>
 		<img class="demo-img" src="/img/test.jpg" alt="image" width="500" height="316">
 
+		<img class="demo-img-two" src="/img/test2.jpg" alt="image" width="500" height="314">
+
 		<script type="text/javascript">
 			$('.demo-img').madeMagnify();
+
+			$('.demo-img-two').madeMagnify({
+				lensWidth: 100,
+				lensHeight: 100
+			});
 		</script>
 	</body>
 </html>
